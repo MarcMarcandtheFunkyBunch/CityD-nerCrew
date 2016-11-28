@@ -1,0 +1,86 @@
+/* Schriftart "roboto-thin" importieren */
+@font-face { font-family: "roboto-thin"; src: url("../resources/ttf/Roboto-Thin.ttf") format("truetype"); }
+@font-face { font-family: "widolte_regular" ; src: url("../resources/ttf/Widolte_Regular.otf") format("opentype");}
+
+#footerLogin {
+      text-align: center;
+      position:fixed;
+      bottom: 10px;
+      width: 100%;
+
+}
+
+#divCenterLogin {
+      text-align: center;
+}
+
+
+.inputLogin {
+      border-radius: 8px;
+      padding:3px;
+      margin: auto;
+      margin-top: 10px;
+      text-align: left;
+      height: 40px;
+      font-size: 13px;
+      align-self: center;
+  }
+
+
+#divCenterLogin {
+      text-align: center;
+}
+
+#LoginInputUser {
+  width: 300px !important;
+  color: grey;
+  font-family: Widolte_Regular;
+}
+
+#LoginInputPassword {
+  width: 300px !important;
+  color: #001a3a;
+  font-family: roboto-thin;
+}
+
+/*Zentrierung des Bildes*/
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/*Definition Login Button*/
+.buttonLogin {
+    background-color: #001a3a;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    height: 40px;
+    width: 150px;
+}
+
+/*Footerfarbe Flieder*/
+#footerLoginFlieder {
+  font-size: 9px;
+  color: #8da6d6;
+}
+
+/*Footerfarbe Nacht*/
+#footerLoginNacht {
+  font-size: 9px;
+  color: #001a3a;
+}
+
+/*Aktivrand Definition*/
+.field-border {
+    border: 3px solid #d3ddf2;
+    border-radius: 7px;
+}
+
+/*Hervorhebung des Randes wenn das Feld aktiv ist*/
+.field-border:focus {
+    border-color: #8da6d6;
+}
