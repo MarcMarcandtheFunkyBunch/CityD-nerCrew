@@ -34,7 +34,7 @@
 #LoginInputUser {
   width: 300px !important;
   color: grey;
-  font-family: Widolte_Regular;
+  font-family: Brandon Grotesque Black;
 }
 
 #LoginInputPassword {
@@ -72,6 +72,14 @@
 #footerLoginNacht {
   font-size: 9px;
   color: #001a3a;
+}
+
+#Registrationstext {
+  font-family: roboto-thin;
+  font-size: 13px;
+  text-align: center;
+  color: #8da6d6;
+
 }
 
 /*Aktivrand Definition*/
