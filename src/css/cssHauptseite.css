@@ -1,0 +1,25 @@
+body{
+  background-color: green;
+}
+
+#header{
+  height: 60px;
+  background-color: #001a3a;
+  padding-top: 12px;
+  position: fixed;
+  width: 100%;
+}
+
+.menu-left{
+  padding-left: 10px;
+  float: left;
+}
+
+.menu-center{
+
+}
+
+.menu-right{
+  padding-right: 10px;
+  float:right;
+}
