@@ -1,6 +1,12 @@
 /* Schriftart "roboto-thin" importieren */
 @font-face { font-family: "roboto-thin"; src: url("../resources/ttf/Roboto-Thin.ttf") format("truetype"); }
+<<<<<<< Updated upstream:src/css/cssLogin.css
 
+=======
+/*
+@font-face { font-family: "widolte_regular" ; src: url("../resources/ttf/Widolte_Regular.otf") format("opentype");}
+*/
+>>>>>>> Stashed changes:cssLogin.css
 #footerLogin {
       text-align: center;
       position:fixed;
