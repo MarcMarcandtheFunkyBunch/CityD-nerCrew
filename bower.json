@@ -1,0 +1,21 @@
+{
+  "name": "citydoenercrew",
+  "description": "check",
+  "main": "index.js",
+  "authors": [
+    "unknown"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MarcMarcandtheFunkyBunch/CityD-nerCrew",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

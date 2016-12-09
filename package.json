@@ -1,0 +1,23 @@
+{
+  "name": "citydoenercrew",
+  "version": "0.0.1",
+  "description": "check",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcMarcandtheFunkyBunch/CityD-nerCrew.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcMarcandtheFunkyBunch/CityD-nerCrew/issues"
+  },
+  "homepage": "https://github.com/MarcMarcandtheFunkyBunch/CityD-nerCrew#readme",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "less": "^2.7.1"
+  }
+}
