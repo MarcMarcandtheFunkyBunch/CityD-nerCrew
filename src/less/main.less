@@ -1,3 +1,12 @@
+@font-face { 
+  font-family: 'brandon';
+             src: url('../../assets/fonts/Brandon_reg.otf'); 
+}
+
+body {
+  overflow-y: scroll;
+}
+
 body.pink {
   background-color: #f7bed2
 }
@@ -7,10 +16,16 @@ body.pink {
   background-color: @darkgrey;
   position: fixed;
   width: 100%;
-}
+  z-index: 9999;
 
-.header img {
-  padding: 10px 3px;
+  img {
+    margin: 12px 3px;
+    cursor: pointer;
+  }
+
+  .morespace {
+    padding-left: 7px;
+  }
 }
 
 .menu-left {
@@ -27,3 +42,387 @@ body.pink {
   float: right;
   text-align: right;
 }
+
+.balken {
+  height: 30px;
+  top: 16px;
+  width: 1px;
+  background-color: white;
+  position: absolute;
+  opacity: .4;
+}
+
+.content {
+  .flag {
+    position: fixed;
+    top: 60px;
+  }
+
+  .scrollup {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+  }
+
+  .scrolldown {
+    position: fixed;
+    top: auto;
+    right: 15px;
+    bottom: 60px;
+  }
+
+  img {
+    position: fixed;
+    top: 105px;
+  }
+
+  .right {
+    right: 0;
+    width: 310px;
+    height: 590px;
+    float: right;
+  }
+  
+  .left {
+    left: 0;
+    height: 590px;
+    width: 340px;
+    float: left;
+  }
+
+  .bubble {
+    background-image: url("../../assets/img/bubble/contentTextBubble.png");
+    width: 369px;
+    height: 120px;
+    top: 80px;
+    left: ~"calc(50% - 185px)";
+    position: absolute;
+
+    p {
+      padding: 20px;
+    }
+  
+   .bubbleIcon {
+      position: absolute;
+      top: 18px;
+      right: 40px;
+   }
+  }
+}
+
+ .footerMain {
+    text-align: center;
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    padding-top: 10px;
+    width: 100%;
+    background-color: @darkgrey;
+    height: 50px;
+    p {
+      color: #8da6d6;
+    }
+
+ }
+
+  .footerLoginFlieder {
+    font-size: 9px;
+    color: #8da6d6;
+  }
+
+  .chapters{
+    // height: 720px;
+    position: absolute;
+    left: 10px;
+    font-size: 13pt;
+    text-transform: uppercase;
+    color: white;
+    font-family: brandon;
+    display: block;
+    top: -1000px;
+    transition: top .5s ease-in-out;
+
+    &.chaptersVisible {
+    top: 70px;
+    z-index: 100;
+    }
+
+    .widthWorkaround {
+      width: 265px;
+    }
+
+    tr{
+      border: 2px solid white;
+    }
+
+    p{
+      padding-left: 10px;
+      padding-top: 10px;
+      border: 1px 2px solid white;
+    }
+    
+    .kompetenzliste {
+      background-color: @darkgrey;
+      height: 130px;
+      img {
+        float: left;
+        margin-left: 10px;
+        margin-bottom: 25px;
+      }      
+      p {
+        float: left;
+        color: @flieder;
+        line-height: 1.0;
+      }
+    }
+
+    .ch00 {
+      background-color: @darkgrey;
+      cursor: pointer;
+    }
+
+    .ch01{
+      background-color: #79ab2e;
+      cursor: pointer;
+    }
+
+    .ch02{
+      background-color: #c6d54f;
+      cursor: pointer;
+    }
+
+    .ch03{
+      background-color: #94c122;
+      cursor: pointer;
+    }
+
+    .ch04{
+      background-color: #44b284;
+      cursor: pointer;
+    }
+
+    .ch05{
+      background-color: #ffdd00;
+      cursor: pointer;
+    }
+
+    .ch06{
+      background-color: #ffed98;
+      cursor: pointer;
+
+    }
+    .ch07{
+      background-color: #fbb900;
+      cursor: pointer;
+    }
+
+    .ch08{
+      background-color: #ef7d25;
+      cursor: pointer;
+    }
+
+    .ch09{
+      background-color: #d60d66;
+      cursor: pointer;
+      }
+
+    .ch10{
+      background-color: #ea518d;
+      cursor: pointer;
+      }
+
+    .ch11{
+      background-color: #f29db7;
+      cursor: pointer;
+      }
+
+    .ch12{
+      background-color: #a62068;
+      cursor: pointer;
+      }
+
+    .ch13{
+      background-color: #008fc8;
+      cursor: pointer;
+      }
+
+    .ch14{
+      background-color: #62c2d0;
+      cursor: pointer;
+      }
+
+    .ch15{
+      background-color: #004077;
+      cursor: pointer;
+      }
+
+    .ch16{
+      background-color: #3873b9;
+      cursor: pointer;
+      }
+
+    }
+
+    #competences {
+      left: 100px;
+      padding-bottom: 70px;
+    }
+
+    #eduplan {
+      left: 50px;
+      width: 265px;
+    }
+
+    .ch123 {
+      background: @darkgrey;
+      color: @flieder;
+
+      &:hover {
+        background: @flieder;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+
+    #student {
+    left:  ~"calc(100% - 480px)";
+    img {
+      padding-top: 15px;
+    }
+
+    .name {
+      padding-top: 25px;
+    }  
+    }
+
+      .bday {
+    margin-top: 30px;
+    text-transform: capitalize;
+    color:  white;
+    float: right;
+    padding-right: 15px;
+  
+    }
+  
+    #chapters-all {
+      padding-bottom: 70px;
+    }
+
+    #school {
+    left:  ~"calc(100% - 430px)";
+
+      img {
+        padding-top: 15px;
+      }
+
+      .schulname {
+        padding-top: 25px;
+      }
+
+      .schuladresse {
+    float: right;
+    text-align: right;
+    padding-top: 25px;
+    color: white;
+    font-size: smaller;
+    padding-right: 15px;
+    }
+
+    }
+
+    #klasse {
+     left:  ~"calc(100% - 380px)";
+
+     img {
+       padding-top: 15px;
+     }
+     .klassenname {
+       padding-top: 25px;
+     }
+
+     .klassenlehrer {
+       float: right;
+    text-align: right;
+    padding-top: 25px;
+    color: white;
+    font-size: smaller;
+    padding-right: 15px;
+    text-transform: capitalize;
+     }
+    }
+
+    #logout {
+      left:  ~"calc(100% - 280px)";
+      .ch123 {
+        color: white;
+      }
+    }
+
+    #help {
+    left:  ~"calc(100% - 330px)";
+      .ch123 {
+        td {
+          p{
+            a{
+              color: white;
+
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .chapterIcon {
+      background-image: url("../../assets/img/misc/chapterOverview-inactive.png");
+      transition: all .3s ease;
+    }
+
+    .chapterIconActive {
+      background-image: url("../../assets/img/misc/chapterOverview-active.png");
+    }
+
+    .competenceIcon {
+      background-image: url("../../assets/img/misc/achievedCompetences-inactive.png");
+    }
+
+    .competenceIconActive {
+      background-image: url("../../assets/img/misc/achievedCompetences-active.png");
+    }
+
+    .eduIcon {
+      background-image: url("../../assets/img/misc/educationalPlan-inactive.png");
+    }
+
+    .eduIconActive {
+      background-image: url("../../assets/img/misc/educationalPlan-active.png");
+      transition: all .3s ease;
+    }
+
+    .helpIcon {
+      background-image: url("../../assets/img/misc/help-inactive.png");
+    }
+
+    .helpIconActive {
+      background-image: url("../../assets/img/misc/help-active.png");
+      transition: all .3s ease;
+    }
+
+    .logoutIcon {
+      background-image: url("../../assets/img/misc/logout-inactive.png");
+    }
+
+    .logoutIconActive {
+      background-image: url("../../assets/img/misc/logout-active.png");
+      transition: all .3s ease;
+    }
+
+    .clickable {
+      width: 100%;
+      top: 60px;
+      bottom: 50px;
+      position: fixed;
+      z-index: 99;
+    }
