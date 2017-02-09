@@ -162,7 +162,7 @@ body.pink {
     }
     
     .kompetenzliste {
-      background-color: @darkgrey;
+      background-color: @darkgrey !important;
       height: 130px;
       img {
         float: left;
@@ -425,4 +425,13 @@ body.pink {
       bottom: 50px;
       position: fixed;
       z-index: 99;
+    }
+
+    #eduTable {
+      tr {
+         background-color: @darkgrey;
+         &:hover {
+           background-color: @flieder;
+         }
+      }
     }
