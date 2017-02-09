@@ -1,6 +1,6 @@
 <html>
     <?php
-    include("header.php");
+    include("src/php/header.php");
     ?>
 <div class="clickable" onclick="hideChapters()"></div>
 
@@ -266,7 +266,7 @@
         </div>
 
     <?php
-    include("footer.php");
+    include("src/php/footer.php");
     ?>
     <script>
 getChapters(token);
