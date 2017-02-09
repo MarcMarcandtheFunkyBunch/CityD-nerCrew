@@ -48,38 +48,6 @@
     </p>
   </footer>
 
-  <script>
-    $('#btn').on('click', function(){
-      login();
-    });
-
-  </script>
-  <script>
-var restClient = ê.createRestClient({
-    host: "46.101.204.215:1337",
-    useSSL: false
-});
-
-var token;
-
-function login(){
-var name=$('#LoginInputUser').val();
-var pword=$('#LoginInputPassword').val();
-restClient.update("/api/V1/login", {
-  username: name,
-  password: pword
-  }).done(function(response) {
-        console.log("REST call succeeded", response);
-        token = response.token;
-        localStorage.setItem("token", token);
-        window.location = "index.html";
-}).fail(function(){
-  console.log("fail");
-});
-
-}
-
-</script>
 </body>
 
 </html>

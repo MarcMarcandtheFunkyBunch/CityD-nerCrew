@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 		uglify: {
             
 			task: {
-				src: ['**/*.js'], 
+				src: ['src/script/*.js'], 
 				dest: 'build/js/main.js'
 			},
 			options: {
