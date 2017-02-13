@@ -69,7 +69,7 @@
                 <td>
                     <img id="avatarBig" src="" alt="studentbild">
                     <p class="name"><span id="vorname"></span>
-                    <span id="nachname"></span></p>
+                        <span id="nachname"></span></p>
                     <p id="bday"></p>
                 </td>
             </tr>
@@ -102,8 +102,10 @@
                         <br><span id="ort"></span>
                         <br><span id="land"></span>
                         <br>
-                        <br><a href="" id="email"></a>
-                        <br><a href="" id="telefon"></a>
+                        <br>
+                        <a href="" id="email"></a>
+                        <br>
+                        <a href="" id="telefon"></a>
                     </p>
                 </td>
             </tr>
@@ -115,7 +117,8 @@
             <tr class="kompetenzliste">
                 <td>
                     <img src="" id="klassenbildBig" alt="studentbild">
-                    <p class="klassenname">Klasse<br>
+                    <p class="klassenname">Klasse
+                        <br>
                         <span id="klasseKlasse"></span>
                     </p>
                     <p class="klassenlehrer">
