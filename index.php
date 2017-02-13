@@ -5,13 +5,13 @@
 <div class="clickable" onclick="hideChapters()"></div>
 
     <div class="content">
-      <img src="assets/img/chapters/chapter01/littleChapterFlag.png" alt="" class="flag">
-      <img src="assets/img/chapters/chapter01/scrollUp.png" alt="" class="scrollup">
-      <img src="assets/img/chapters/chapter01/scrollDown.png" alt="" class="scrolldown">
-      <div class="left"><img src="assets/img/illustrations/illustrationLeft.png"></div>
+      <img src="images/chapters/chapter01/littleChapterFlag.png" alt="" class="flag">
+      <img src="images/chapters/chapter01/scrollUp.png" alt="" class="scrollup">
+      <img src="images/chapters/chapter01/scrollDown.png" alt="" class="scrolldown">
+      <div class="left"><img src="images/illustrations/illustrationLeft.png"></div>
       <div class="bubble"><p>Symbole sind Bilder, <br>die mir etwas sagen wollen. <br>Ich kann sie verstehen.
-      <img class="bubbleIcon" src="assets/img/chapters/chapter01/competenceDone.png"></div>
-      <div class="right"><img src="assets/img/illustrations/illustrationRight.png"></div>
+      <img class="bubbleIcon" src="images/chapters/chapter01/competenceDone.png"></div>
+      <div class="right"><img src="images/illustrations/illustrationRight.png"></div>
     </div>
 
     <!--Kapitelfähnchen-->
@@ -21,7 +21,7 @@
         <tbody id="chapterTable">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/misc/confirmation.png" alt="haken">
+              <img src="images/misc/confirmation.png" alt="haken">
               <p>Check!<br>Kompetenzliste</p>
             </td>
           </tr>
@@ -32,9 +32,10 @@
 <!-- Das kann ich -->
 <div class="chapters" id="competences">
       <table>
+      <tbody id="competenceTable">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/misc/achievedCompetences-big.png" alt="stern">
+              <img src="images/misc/achievedCompetences-big.png" alt="stern">
               <p>Das<br>kann<br>ich!</p>
             </td>
           </tr>
@@ -43,86 +44,8 @@
               <p>alle kompetenzen</p>
             </td>
           </tr>
-          <tr class="ch01">
-            <td>
-              <p>DAS BIN ICH!</p>
-            </td>
-          </tr>
-          <tr class="ch02">
-            <td>
-              <p>ich und die anderen</p>
-            </td>
-          </tr>
-          <tr class="ch03">
-            <td>
-              <p>die welt um mich herum</p>
-            </td>
-          </tr>
-          <tr class="ch04">
-            <td>
-              <p>ich werde selbstständig</p>
-            </td>
-          </tr>
-          <tr class="ch05">
-            <td>
-              <p>sich bewegen</p>
-            </td>
-          </tr>
-          <tr class="ch06">
-            <td>
-              <p>lernen</p>
-            </td>
-          </tr>
-          <tr class="ch07">
-            <td>
-              <p>arbeiten</p>
-            </td>
-          </tr>
-          <tr class="ch08">
-            <td>
-              <p>gestalten und erschaffen</p>
-            </td>
-          </tr>
-          <tr class="ch09">
-            <td>
-              <p>sprechen</p>
-            </td>
-          </tr>
-          <tr class="ch10">
-            <td>
-              <p>fremdsprache</p>
-            </td>
-          </tr>
-          <tr class="ch11">
-            <td>
-              <p>lesen</p>
-            </td>
-          </tr>
-          <tr class="ch12">
-            <td>
-              <p>schreiben</p>
-            </td>
-          </tr>
-          <tr class="ch13">
-            <td>
-              <p>messen</p>
-            </td>
-          </tr>
-          <tr class="ch14">
-            <td>
-              <p>Lösungen finden</p>
-            </td>
-          </tr>
-          <tr class="ch15">
-            <td>
-              <p>zählen und Rechnen</p>
-            </td>
-          </tr>
-          <tr class="ch16">
-            <td>
-              <p>form und raum entdecken</p>
-            </td>
-          </tr>
+          
+          </tbody>
       </table>
     </div>
 
@@ -132,7 +55,7 @@
         <tbody id="eduTable">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/misc/educationalPlan-big.png" alt="förderplanbild">
+              <img src="images/misc/educationalPlan-big.png" alt="förderplanbild">
               <p>Förderplan</p>
             </td>
           </tr>
@@ -145,7 +68,7 @@
       <table class="widthWorkaround">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/student/superhero-gandalf-big-active.png" alt="studentbild">
+              <img src="images/student/superhero-gandalf-big-active.png" alt="studentbild">
               <p class="name">Vorname
                 <br> Name
               </p>
@@ -175,7 +98,7 @@
       <table class="widthWorkaround">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/school/school-grey-big-active.png" alt="studentbild">
+              <img src="images/school/school-grey-big-active.png" alt="studentbild">
               <p class="schulname">Irgendeine
                 <br>Schule
               </p>
@@ -196,7 +119,7 @@
       <table class="widthWorkaround">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/studyGroup/studyGroup_1c_active-big.png" alt="studentbild">
+              <img src="images/studyGroup/studyGroup_1c_active-big.png" alt="studentbild">
               <p class="klassenname">Klasse
                 <br>2jz
               </p>
@@ -215,7 +138,7 @@
       <table class="widthWorkaround">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/misc/help-big.png" alt="studentbild">
+              <img src="images/misc/help-big.png" alt="studentbild">
               <p class="needhelp">Brauchst<br>du Hilfe?
               </p>
             </td>
@@ -246,7 +169,7 @@
       <table class="widthWorkaround">
           <tr class="kompetenzliste">
             <td>
-              <img src="assets/img/misc/logout-big.png" alt="studentbild">
+              <img src="images/misc/logout-big.png" alt="studentbild">
               <p class="logouttext">Möchstest du
                 <br>Check!
                 <br>verlassen?
@@ -269,8 +192,9 @@
     include("src/php/footer.php");
     ?>
     <script>
+getStudent(token);    
 getChapters(token);
-//getAvatars(token);
+getAvatars(token);
 getEduplan(token);
 </script>  
   </body>

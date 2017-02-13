@@ -13,7 +13,7 @@
 
 <body>
   <!-- Header-->
-  <img src="assets/img/login/header.png" alt="Header" class="displayed" />
+  <img src="images/login/header.png" alt="Header" class="displayed" />
   <br>
   <form class="text-center">
     <!--Eingabefeld für den Benutzername-->
@@ -23,21 +23,21 @@
     <input type="password" placeholder="PASSWORT" class="field-border inputLogin" id="LoginInputPassword"><br />
 
     <!--Login Button-->
-    <input type="button" class="buttonLogin" id="btn" onclick="login()">LOS!</input>
+    <button type="button" class="buttonLogin" id="btn" onclick="login()">LOS!</button>
     <br />
   </form>
 
   <!--Registrationstext-->
   <div class="Registrationstext">
-    <p> Sie möchten mit CHECK! arbeiten?
+    <p><br> Sie möchten mit CHECK! arbeiten?
       <br>
       <u>Jetzt registrieren.</u>
   </div>
 
   <!--Footer-->
   <footer class="footerLogin">
-    <img src="assets/img/login/footer.png" alt="Footer" class="displayed" />
-    <img src="assets/img/login/stern.png" alt="Stern" width="25" height="25" class="displayed">
+    <img src="images/login/footer.png" alt="Footer" class="displayed" />
+    <img src="images/login/stern.png" alt="Stern" width="25" height="25" class="displayed">
     <p class="footerLoginNacht">
       edition 2016 dark night blue 1.0
     </p>
