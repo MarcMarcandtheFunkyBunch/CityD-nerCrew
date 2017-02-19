@@ -1,22 +1,28 @@
 <html>
-<?php
+    <?php
+    include("src/php/head.php");
+    ?>
+    <body>
+    <?php
     include("src/php/header.php");
     ?>
     <div class="clickable" onclick="hideChapters()"></div>
     <div class="content">
-        <img src="images/chapters/chapter01/littleChapterFlag.png" alt="" class="flag">
-        <img src="images/chapters/chapter01/scrollUp.png" alt="" class="scrollup">
-        <img src="images/chapters/chapter01/scrollDown.png" alt="" class="scrolldown">
+        <img id="chapterFlag" src="" alt="" class="flag">
+        <img id="scrollUp" src="" alt="" class="scrollup">
+        <img id="scrollDown" src="" alt="" class="scrolldown">
         <div class="left"><img src="images/illustrations/illustrationLeft.png"></div>
+        <div id="bubbleCanvas">
         <div class="bubble">
             <p>Symbole sind Bilder,
                 <br>die mir etwas sagen wollen.
-                <br>Ich kann sie verstehen.
+                <br>Ich kann sie verstehen.</p>
                 <img class="bubbleIcon" src="images/chapters/chapter01/competenceDone.png"></div>
+        </div>
         <div class="right"><img src="images/illustrations/illustrationRight.png"></div>
     </div>
     <!--Kapitelfähnchen-->
-    <div class="chapters" id="chapters-all">
+    <div class="chapters arrow_box arrow_box_ganzLinks" id="chapters-all">
         <table>
             <tbody id="chapterTable">
                 <tr class="kompetenzliste">
@@ -30,7 +36,7 @@
         </table>
     </div>
     <!-- Das kann ich -->
-    <div class="chapters" id="competences">
+    <div class="chapters arrow_box arrow_box_mitteLinks" id="competences">
         <table>
             <tbody id="competenceTable">
                 <tr class="kompetenzliste">
@@ -41,7 +47,7 @@
                             <br>ich!</p>
                     </td>
                 </tr>
-                <tr class="ch00">
+                <tr class="ch00" id="co0" onclick="selectAllCompetences()">
                     <td>
                         <p>alle kompetenzen</p>
                     </td>
@@ -50,7 +56,7 @@
         </table>
     </div>
     <!--Förderplan-->
-    <div class="chapters" id="eduplan">
+    <div class="chapters arrow_box arrow_box_mitteLinks" id="eduplan">
         <table class="widthWorkaround">
             <tbody id="eduTable">
                 <tr class="kompetenzliste">
@@ -63,7 +69,7 @@
         </table>
     </div>
     <!-- Student -->
-    <div class="chapters" id="student">
+    <div class="chapters arrow_box" id="student">
         <table class="widthWorkaround">
             <tr class="kompetenzliste">
                 <td>
@@ -75,7 +81,7 @@
             </tr>
             <tr class="ch123">
                 <td>
-                    <p>Mein Profilbild ändern</p>
+                    <a href="changepic.php"><p>Mein Profilbild ändern</p></a>
                 </td>
             </tr>
             <tr class="ch123">
@@ -91,7 +97,7 @@
         </table>
     </div>
     <!-- School -->
-    <div class="chapters" id="school">
+    <div class="chapters arrow_box" id="school">
         <table class="widthWorkaround">
             <tr class="kompetenzliste">
                 <td>
@@ -112,7 +118,7 @@
         </table>
     </div>
     <!-- Klasse -->
-    <div class="chapters" id="klasse">
+    <div class="chapters arrow_box" id="klasse">
         <table class="widthWorkaround">
             <tr class="kompetenzliste">
                 <td>
@@ -130,7 +136,7 @@
         </table>
     </div>
     <!-- Help -->
-    <div class="chapters" id="help">
+    <div class="chapters arrow_box" id="help">
         <table class="widthWorkaround">
             <tr class="kompetenzliste">
                 <td>
@@ -163,7 +169,7 @@
         </table>
     </div>
     <!-- Logout -->
-    <div class="chapters" id="logout">
+    <div class="chapters arrow_box" id="logout">
         <table class="widthWorkaround">
             <tr class="kompetenzliste">
                 <td>
@@ -176,12 +182,12 @@
             </tr>
             <tr class="ch123">
                 <td>
-                    <p>Ja</p>
+                    <p onclick="logout()">Ja</p>
                 </td>
             </tr>
             <tr class="ch123">
                 <td>
-                    <p>Nein</p>
+                    <p onclick="hideChapters()">Nein</p>
                 </td>
             </tr>
         </table>
@@ -189,12 +195,7 @@
     <?php
     include("src/php/footer.php");
     ?>
-        <script>
-        getStudent(token);
-        getChapters(token);
-        //getAvatars(token);
-        getEduplan(token);
-        </script>
+   
         </body>
 
 </html>

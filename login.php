@@ -23,7 +23,7 @@
     <input type="password" placeholder="PASSWORT" class="field-border inputLogin" id="LoginInputPassword"><br />
 
     <!--Login Button-->
-    <button type="button" class="buttonLogin" id="btn" onclick="login()">LOS!</button>
+    <button type="button" class="button buttonActive" id="btn" onclick="login()">LOS!</button>
     <br />
   </form>
 
