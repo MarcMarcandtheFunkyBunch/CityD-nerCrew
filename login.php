@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>CheckLoginIn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="build/css/main.css" media="screen"/>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/everest/dist/everest.min.js"></script>
-  <script src="build/js/main.js"></script>
-</head>
+<?php
+include "src/php/head.php";
+?>
 
 <body>
+<div class="hidden alert" id="wrongDataAlert">
+  <img class="closebtn" src="images/misc/delete.png" onclick="hideAlert()">
+  <img class="alert-pic" src="images/misc/warning.png">
+  <p class="alert-text">Nutzername und/oder Passwort falsch</p>
+</div>
   <!-- Header-->
   <img src="images/login/header.png" alt="Header" class="displayed" />
   <br>
