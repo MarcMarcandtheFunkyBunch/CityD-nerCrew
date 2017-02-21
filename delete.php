@@ -9,11 +9,16 @@
     ?>
 
 
+    <div class="hidden alert confirm" id="profileDeletedAlert">
+    <img class="closebtn" src="images/misc/delete.png" onclick="hideAlertAndGoToLogin()">
+    <img class="alert-pic" src="images/misc/confirmation.png">
+    <p class="alert-text">Profil wurde erfolgreich gelöscht!</p>
+    </div>
 
   <img class="img-center" src="images/misc/delete-profile.png" alt="studentbild">
     <p class="text-center changePicLead">Profil löschen</p>
 
-    <div style="width:100%;" class="top-120">
+    <div style="width:100%;" class="top-120 height-60">
         <div class="leftLabels">
         <label>Passwort*</label><br>
         </div>
@@ -23,10 +28,11 @@
     <form class="changePwForm">
         <input id="pw" type="password" /><br>
     </form>
+    </div></div>
+<div class="text-center top-100">
+        <button class="button buttonInactive" onclick="backToHome()">abbrechen</button>
+        <button class="button buttonActive" onclick="deleteProfile()">löschen</button>
     </div>
-        <button class="button buttonActive text-center buttonWeiterOben" onclick="deleteProfile()">löschen</button>
-    </div>
-
 
     <?php
     include("src/php/footer.php");
@@ -38,18 +44,20 @@ function deleteProfile() {
 
     restClient.withHeader("Authorization", token).remove("/api/V1/student")
     .done(function(response) {
-        alert(response);
-        console.log("REST call succeeded", response);
         window.localStorage.removeItem('token');
         window.localStorage.removeItem('allThemAvatars');
         window.localStorage.removeItem('student');
-        window.location = "login.php";
-
+        $('#profileDeletedAlert').removeClass('hidden');
     })
     .fail(function() {
         console.log("REST call failed", arguments);
     });
 
+}
+
+function hideAlertAndGoToLogin() {
+    hideAlert();
+    window.location = 'login.php';
 }
 </script>
 

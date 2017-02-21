@@ -6,6 +6,12 @@
     include("src/php/header.php");
     ?>
 
+    <div class="hidden alert confirm" id="picChangedAlert">
+    <img class="closebtn" src="images/misc/delete.png" onclick="hideAlertAndGoToIndex()">
+    <img class="alert-pic" src="images/misc/confirmation.png">
+    <p class="alert-text">Profilbild wurde erfolgreich geändert!</p>
+    </div>
+
     <img class="img-center" id="avatarBig" src="" alt="studentbild">
     <p class="text-center changePicLead">Profilbild ändern</p>
 

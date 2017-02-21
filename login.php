@@ -9,7 +9,7 @@ include "src/php/head.php";
 <div class="hidden alert" id="wrongDataAlert">
   <img class="closebtn" src="images/misc/delete.png" onclick="hideAlert()">
   <img class="alert-pic" src="images/misc/warning.png">
-  <p class="alert-text">Nutzername und/oder Passwort falsch</p>
+  <p class="alert-text">Nutzername und/oder Passwort falsch!</p>
 </div>
   <!-- Header-->
   <img src="images/login/header.png" alt="Header" class="displayed" />
