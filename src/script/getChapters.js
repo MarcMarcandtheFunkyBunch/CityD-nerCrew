@@ -94,6 +94,8 @@ function selectCompetences(id) {
     restClient.withHeader("Authorization", newToken).read("/api/V1/studentcompetence").then(function(chapters) {
         $('#bubbleCanvas').html('');
         hideChapters();
+        var chapterArray = [];
+
         for (var thisChapter in chapters) {
             if (chapters[thisChapter].checked && chapters[thisChapter].chapterId == idNumber) {
                 var chapterDezNum;
@@ -110,9 +112,30 @@ function selectCompetences(id) {
                     isDone = "Undone";
                 }
 
+                var datum = chapters[thisChapter].fromDate;
+
                 var competenceNumber = chapterDezNum + "." + chapters[thisChapter].number;
-                $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + chapterDezNum + '/competence' + isDone + '.png">' + '<p class="compNr">' + competenceNumber + '</p></div>');
+                chapters[thisChapter].compNr = competenceNumber;
+                chapters[thisChapter].done = isDone;
+                chapters[thisChapter].chapterNr = chapterDezNum;
+                chapterArray.push(chapters[thisChapter]);   
+               // $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + chapterDezNum + '/competence' + isDone + '.png">' + '<p class="compNr">' + competenceNumber + '</p></div>');
             }
+        }
+
+        
+        for (chapterArrayPointer in chapterArray) {
+            chapterArray[chapterArrayPointer].fromDate = chapterArray[chapterArrayPointer].fromDate.replace("-", "").replace("-", "");
+        }
+
+        var sortedChapterArray = _.sortBy(chapterArray, 'fromDate').reverse();
+        var starId = -1;
+        for (var chapterArrayPointer in sortedChapterArray) {
+            starId++; 
+            var datum = sortedChapterArray[chapterArrayPointer].fromDate;
+            var formattedDate = (datum.charAt(6)+datum.charAt(7)+"."+datum.charAt(4)+datum.charAt(5)+"."+datum.charAt(0)+datum.charAt(1)+datum.charAt(2)+datum.charAt(3));
+            $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedChapterArray[chapterArrayPointer].studentText + '</p><img class="bubbleIcon" id="'+starId+'" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedChapterArray[chapterArrayPointer].chapterNr + '/competence' + chapterArray[chapterArrayPointer].done +'.png">' + '<p class="compNr">' + sortedChapterArray[chapterArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip'+starId+'">Du hast diese Kompetenz am '+formattedDate+' erreicht!</p></div>');            
+            
         }
 
         var flagUrl = 'images/chapters/chapter' + chapterDezNum + '/littleChapterFlag.png';
@@ -140,6 +163,7 @@ function selectAllCompetences() {
     restClient.withHeader("Authorization", newToken).read("/api/V1/studentcompetence").then(function(chapters) {
         $('#bubbleCanvas').html('');
         hideChapters();
+        var allChaptersArray = [];
 
         for (var thisChapter in chapters) {
             if (chapters[thisChapter].checked) {
@@ -150,9 +174,27 @@ function selectAllCompetences() {
                     chapterDezNum = "" + chapters[thisChapter].chapterId;
                 }
 
+                var datum = chapters[thisChapter].fromDate;
+
                 var competenceNumber = chapterDezNum + "." + chapters[thisChapter].number;
-                $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + chapterDezNum + '/competenceDone.png">' + '<p class="compNr">' + competenceNumber + '</p></div>');
+                chapters[thisChapter].compNr = competenceNumber;
+                chapters[thisChapter].chapterNr = chapterDezNum;
+                allChaptersArray.push(chapters[thisChapter]);                
             }
+        }
+
+        for (allChaptersArrayPointer in allChaptersArray) {
+            allChaptersArray[allChaptersArrayPointer].fromDate = allChaptersArray[allChaptersArrayPointer].fromDate.replace("-", "").replace("-", "");
+        }
+
+        var sortedallChaptersArray = _.sortBy(allChaptersArray, 'fromDate').reverse();
+        var starId = -1;
+        for (var allChaptersArrayPointer in sortedallChaptersArray) {
+            starId++;
+            var datum = sortedallChaptersArray[allChaptersArrayPointer].fromDate;
+            var formattedDate = (datum.charAt(6)+datum.charAt(7)+"."+datum.charAt(4)+datum.charAt(5)+"."+datum.charAt(0)+datum.charAt(1)+datum.charAt(2)+datum.charAt(3));
+            $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedallChaptersArray[allChaptersArrayPointer].studentText +'</p><img class="bubbleIcon" id="'+starId+'" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedallChaptersArray[allChaptersArrayPointer].chapterNr + '/competenceDone.png">' + '<p class="compNr">' + allChaptersArray[allChaptersArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip'+starId+'">Du hast diese Kompetenz am '+formattedDate+' erreicht!</p></div>');            
+            
         }
 
         $('#scrollUp').attr("src", "images/allCompetences/scrollUp.png");
@@ -176,12 +218,12 @@ function selectEduplans(id) {
     var newToken = window.localStorage.getItem('token');
     var url = "/api/V1/educationalPlan/" + idNumber;
     restClient.withHeader("Authorization", newToken).read(url).then(function(eduplans) {
-         $('#bubbleCanvas').html('');
+        $('#bubbleCanvas').html('');
         hideChapters();
-        restClient.withHeader("Authorization", newToken).read("/api/V1/educationalPlan").then(function (allPlans) {
-            for(var k in allPlans) {
-                if(allPlans[k]._id == idNumber) {
-                    $('#bubbleCanvas').append('<p class="selfmadeFlag">'+allPlans[k].name+'</p>');
+        restClient.withHeader("Authorization", newToken).read("/api/V1/educationalPlan").then(function(allPlans) {
+            for (var k in allPlans) {
+                if (allPlans[k]._id == idNumber) {
+                    $('#bubbleCanvas').append('<p class="selfmadeFlag">' + allPlans[k].name + '</p>');
                     $('#chapterFlag').attr("src", "");
                     $('#scrollDown').attr("src", "images/allCompetences/scrollDownTransparent.png");
                     $('#scrollUp').attr("src", "images/allCompetences/scrollUpTransparent.png");
@@ -189,7 +231,7 @@ function selectEduplans(id) {
                 }
             }
         });
-       
+
         for (i in eduplans) {
             if (eduplans[i].educationalPlanId < 10) {
                 var chapterDezNum = "0" + eduplans[i].educationalPlanId;
@@ -203,4 +245,8 @@ function selectEduplans(id) {
             }
         }
     });
+}
+
+function showTooltip(id) {
+    $('#tooltip'+id).toggleClass("hidden");
 }

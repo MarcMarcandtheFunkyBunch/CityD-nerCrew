@@ -8,5 +8,6 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/everest/dist/everest.min.js"></script>
     <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="build/js/main.js"></script>
   </head>

@@ -27,3 +27,5 @@ Everest 1.1.1-alpha (RestClient): http://pulsarblow.github.io/everest//
 malihu-custom-scrollbar-plugin 3.1.5 (Custom Scrollbar): http://manos.malihu.gr/jquery-custom-content-scroller/
 
 jQuery Mousewheel 3.1.13 (dependency von malihu-custom-scrollbar-plugin): https://plugins.jquery.com/mousewheel/
+
+underscore 1.8.3: http://underscorejs.org/
