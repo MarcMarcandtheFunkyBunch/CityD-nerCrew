@@ -1,0 +1,190 @@
+.chapters {
+    // height: 720px;
+    max-height: ~"calc(100% - 150px)";
+    overflow: auto;
+    position: fixed;
+    left: 10px;
+    font-size: 13pt;
+    text-transform: uppercase;
+    border: 2px solid white;
+    color: white;
+    font-family: brandon;
+    display: block;
+    top: -1000px;
+    transition: top .5s ease-in-out;
+    &.chaptersVisible {
+        top: 56px;
+        z-index: 100;
+    }
+    .widthWorkaround {
+        width: 261px;
+    }
+    tr {
+        border-top: 2px solid white;
+    }
+    p {
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 1px 2px solid white;
+    }
+    .kompetenzliste {
+        border: 0;
+        background-color: @darkgrey !important;
+        height: 130px;
+        img {
+            float: left;
+            margin-left: 10px;
+            margin-bottom: 25px;
+        }
+        p {
+            float: left;
+            color: @flieder;
+            line-height: 1.0;
+        }
+    }
+    .ch00 {
+        background-color: @darkgrey;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+#competences {
+    left: 100px;
+    margin-bottom: 70px;
+}
+
+#eduplan {
+    left: 50px;
+    width: 265px;
+}
+
+.chDark {
+    background: @darkgrey;
+    color: @flieder;
+    &:hover {
+        background: @flieder;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+#student {
+    left: ~"calc(100% - 480px)";
+    img {
+        padding-top: 15px;
+    }
+    .name {
+        padding-top: 25px;
+    }
+}
+
+#bday {
+    margin-top: 30px;
+    text-transform: capitalize;
+    color: white;
+    float: right;
+    padding-right: 15px;
+}
+
+#chapters-all {
+    margin-bottom: 70px;
+}
+
+#school {
+    left: ~"calc(100% - 430px)";
+    img {
+        padding-top: 15px;
+    }
+    #schulname {
+        padding-top: 25px;
+        max-width: 150px;
+    }
+    .schuladresse {
+        float: right;
+        text-align: right;
+        padding-top: 25px;
+        color: white;
+        font-size: smaller;
+        padding-right: 15px;
+    }
+}
+
+#klasse {
+    left: ~"calc(100% - 380px)";
+    img {
+        padding-top: 15px;
+    }
+    .klassenname {
+        padding-top: 25px;
+    }
+    .klassenlehrer {
+        float: right;
+        text-align: right;
+        padding-top: 25px;
+        color: white;
+        font-size: smaller;
+        padding-right: 15px;
+        text-transform: capitalize;
+    }
+}
+
+#logout {
+    left: ~"calc(100% - 280px)";
+    z-index: 999;
+    .chDark {
+        color: white;
+    }
+}
+
+#help {
+    left: ~"calc(100% - 330px)";
+    .chDark {
+        td {
+            p {
+                a {
+                    color: white;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#eduTable {
+    tr {
+        background-color: @darkgrey;
+        color: @flieder;
+        transition: all .3s ease;
+        &:hover {
+            background-color: @flieder;
+            color: #fff;
+        }
+    }
+}
+
+#email,
+#telefon {
+    color: white;
+    text-transform: lowercase;
+}
+
+
+.chDark {
+        td {
+            p {
+                color: white;
+            }
+        }
+    }
+
+.tooltiptail {
+    display: block;
+    border-color: #ffffff #ffffff #a0c7ff #ffffff;
+    border-style: solid;
+    border-width: 20px;
+    width: 0px;
+    height: 0px;
+}

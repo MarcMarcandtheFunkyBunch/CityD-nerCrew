@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'brandon';
+    src: url('../../assets/fonts/Brandon_reg.otf');
+}
+
+@font-face {
+    font-family: dd;
+    src: url('../../assets/fonts/dr-hh-el.ttf');
+}
+
+body {
+    overflow-y: auto;
+}
+
+.clickable {
+    width: 100%;
+    top: 60px;
+    bottom: 50px;
+    position: fixed;
+    z-index: 99;
+}
+
+.img-center {
+    left: ~"calc(50% - 38px)";
+    position: relative;
+    top: 106px;
+}
+
+.changePicLead {
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: @darkgrey;
+    position: relative;
+    font-weight: 800;
+    top: 120px;
+}
+
+#avatarsAll {
+    position: relative;
+    top: 130px;
+    width: 608px;
+    left: ~"calc(50% - 304px)";
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+img {
+user-drag: none; 
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+
+#bubbleCanvas {
+    margin-bottom: 150px;
+}
+
+.mCSB_inside>.mCSB_container {
+    margin-right: 0;
+}
+
+.mCSB_scrollTools {
+    width: 1px;
+}
+
+.selfmadeFlag {
+    position: fixed;
+    top: 75px;
+    padding: 7px 25px;
+    left: 0;
+    background: @darkgrey;
+    font-weight: bold;
+    color: white;
+    font-size: larger;
+}
+
+.white {
+    background-color: white !important;
+}

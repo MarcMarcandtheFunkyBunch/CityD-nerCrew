@@ -57,7 +57,7 @@ function deleteProfile() {
 
 function hideAlertAndGoToLogin() {
     hideAlert();
-    window.location = 'login.php';
+    window.location = 'index.php';
 }
 </script>
 

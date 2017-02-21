@@ -1,0 +1,73 @@
+.content {
+    .flag {
+        position: fixed;
+        top: 60px;
+    }
+    .scrollup {
+        position: fixed;
+        top: 70px;
+        right: 15px;
+        z-index: 999;
+    }
+    .scrolldown {
+        position: fixed;
+        top: auto;
+        right: 15px;
+        bottom: 60px;
+        z-index: 999;
+    }
+    img {
+        position: fixed;
+        top: 105px;
+    }
+    .right {
+        right: 0;
+        top: 0;
+        position: absolute;
+        width: 310px;
+        height: 590px;
+        float: right;
+    }
+    .left {
+        left: 0;
+        height: 590px;
+        width: 340px;
+        top: 0;
+        position: absolute;
+        float: left;
+    }
+    .bubble {
+        background-image: url("../../images/bubble/contentTextBubble.png");
+        width: 369px;
+        height: 120px;
+        top: 80px;
+        left: ~"calc(50% - 185px)";
+        position: relative;
+        margin: 5px;
+        p {
+            padding: 20px;
+            position: absolute;
+            width: 200px;
+            font-size: 20px;
+            padding-top: 10px;
+            font-weight: bold;
+            font-family: dd;
+            color: @darkgrey;
+        }
+
+        .compNr {
+        font-size: 10pt;
+        position: absolute;
+        bottom: 0;
+        padding: 0;
+        padding-left: 20px;
+        margin-bottom: 1px;
+
+        }
+        .bubbleIcon {
+            position: absolute;
+            top: 18px;
+            right: 40px;
+        }
+    }
+}
