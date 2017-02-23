@@ -12,10 +12,10 @@
                 <img id="chapterFlag" src="" alt="" class="flag">
                 <img id="scrollUp" src="" alt="" class="scrollup">
                 <img id="scrollDown" src="" alt="" class="scrolldown">
-                <div class="left"><img src="images/illustrations/illustrationLeft.png"></div>
+                <div class="left"><img id="illuLeft" src=""></div>
                 <div id="bubbleCanvas">
                 </div>
-                <div class="right"><img src="images/illustrations/illustrationRight.png"></div>
+                <div class="right"><img id="illuRight" src=""></div>
             </div>
             <!--Kapitelfähnchen-->
             <div class="chapters mCustomScrollbar" id="chapters-all">
