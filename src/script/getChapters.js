@@ -42,7 +42,9 @@ function selectChapters(id) {
     restClient.withHeader("Authorization", newToken).read("/api/V1/studentcompetence").then(function(chapters) {
         $('#bubbleCanvas').html('');
         hideChapters();
-        var starId = -1;
+        var chapterArray = [];
+
+
         for (var thisChapter in chapters) {
             if (chapters[thisChapter].chapterId == idNumber) {
                 var chapterDezNum;
@@ -58,22 +60,37 @@ function selectChapters(id) {
                 } else {
                     isDone = "Undone";
                 }
-                starId++;
+
                 var datum = chapters[thisChapter].fromDate;
-                if(datum != null) {
-                    datum = datum.replace("-", "").replace("-","");
-                    datum = (datum.charAt(6)+datum.charAt(7)+"."+datum.charAt(4)+datum.charAt(5)+"."+datum.charAt(0)+datum.charAt(1)+datum.charAt(2)+datum.charAt(3));
+                if (datum != null) {
+                    datum = datum.replace("-", "").replace("-", "");
                 }
-
                 var competenceNumber = chapterDezNum + "." + chapters[thisChapter].number;
-                if(datum != null) {
-                $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" id="'+starId+'" onclick="showTooltip(this.id)" src="images/chapters/chapter' + chapterDezNum + '/competence' + isDone + '.png">' + '<p class="compNr">' + competenceNumber + '</p><p class="tooltipDate hidden" id="tooltip'+starId+'">Du hast diese Kompetenz am '+datum+' erreicht!</p></div></div>');
-                } else {
-
-                $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + chapterDezNum + '/competence' + isDone + '.png">' + '<p class="compNr">' + competenceNumber + '</p></div></div>');
-                }
+                chapters[thisChapter].compNr = competenceNumber;
+                chapters[thisChapter].done = isDone;
+                chapters[thisChapter].chapterNr = chapterDezNum;
+                chapters[thisChapter].datum = datum;
+                chapterArray.push(chapters[thisChapter]);
             }
         }
+
+        var sortedChapterArray = _.sortBy(chapterArray, "datum").reverse();
+        var starId = -1;
+        for (var chapterArrayPointer in sortedChapterArray) {
+            starId++;
+            var datum = sortedChapterArray[chapterArrayPointer].datum;
+
+            if (datum != null) {
+                var formattedDate = (datum.charAt(6) + datum.charAt(7) + "." + datum.charAt(4) + datum.charAt(5) + "." + datum.charAt(0) + datum.charAt(1) + datum.charAt(2) + datum.charAt(3));
+
+                $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedChapterArray[chapterArrayPointer].studentText + '</p><img class="bubbleIcon" id="' + starId + '" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedChapterArray[chapterArrayPointer].chapterNr + '/competence' + sortedChapterArray[chapterArrayPointer].done + '.png">' + '<p class="compNr">' + sortedChapterArray[chapterArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip' + starId + '">Du hast diese Kompetenz am ' + formattedDate + ' erreicht!</p></div></div>');
+            } else {
+
+                $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedChapterArray[chapterArrayPointer].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + sortedChapterArray[chapterArrayPointer].chapterNr + '/competence' + sortedChapterArray[chapterArrayPointer].done + '.png">' + '<p class="compNr">' + sortedChapterArray[chapterArrayPointer].compNr + '</p></div></div>');
+            }
+
+        }
+
 
         var flagUrl = 'images/chapters/chapter' + chapterDezNum + '/littleChapterFlag.png';
         var scrollUpUrl = 'images/chapters/chapter' + chapterDezNum + '/scrollUp.png';
@@ -92,7 +109,7 @@ function selectChapters(id) {
         restClient.withHeader("Authorization", newToken).read(illuUrl).then(function(illus) {
             $('#illuLeft').attr("src", illus[idNumber].illustrationLeft);
             $('#illuRight').attr("src", illus[idNumber].illustrationRight);
-        });    
+        });
     });
 }
 
@@ -135,24 +152,25 @@ function selectCompetences(id) {
                 chapters[thisChapter].compNr = competenceNumber;
                 chapters[thisChapter].done = isDone;
                 chapters[thisChapter].chapterNr = chapterDezNum;
-                chapterArray.push(chapters[thisChapter]);   
-               // $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + chapterDezNum + '/competence' + isDone + '.png">' + '<p class="compNr">' + competenceNumber + '</p></div>');
+                chapterArray.push(chapters[thisChapter]);
+                // $('#bubbleCanvas').append('<div class="bubble"><p>' + chapters[thisChapter].studentText + '</p><img class="bubbleIcon" src="images/chapters/chapter' + chapterDezNum + '/competence' + isDone + '.png">' + '<p class="compNr">' + competenceNumber + '</p></div>');
             }
         }
 
-        
+
         for (chapterArrayPointer in chapterArray) {
             chapterArray[chapterArrayPointer].fromDate = chapterArray[chapterArrayPointer].fromDate.replace("-", "").replace("-", "");
         }
 
         var sortedChapterArray = _.sortBy(chapterArray, 'fromDate').reverse();
+        //console.log(sortedChapterArray);
         var starId = -1;
         for (var chapterArrayPointer in sortedChapterArray) {
-            starId++; 
+            starId++;
             var datum = sortedChapterArray[chapterArrayPointer].fromDate;
-            var formattedDate = (datum.charAt(6)+datum.charAt(7)+"."+datum.charAt(4)+datum.charAt(5)+"."+datum.charAt(0)+datum.charAt(1)+datum.charAt(2)+datum.charAt(3));
-            $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedChapterArray[chapterArrayPointer].studentText + '</p><img class="bubbleIcon" id="'+starId+'" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedChapterArray[chapterArrayPointer].chapterNr + '/competence' + chapterArray[chapterArrayPointer].done +'.png">' + '<p class="compNr">' + sortedChapterArray[chapterArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip'+starId+'">Du hast diese Kompetenz am '+formattedDate+' erreicht!</p></div>');            
-            
+            var formattedDate = (datum.charAt(6) + datum.charAt(7) + "." + datum.charAt(4) + datum.charAt(5) + "." + datum.charAt(0) + datum.charAt(1) + datum.charAt(2) + datum.charAt(3));
+            $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedChapterArray[chapterArrayPointer].studentText + '</p><img class="bubbleIcon" id="' + starId + '" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedChapterArray[chapterArrayPointer].chapterNr + '/competence' + chapterArray[chapterArrayPointer].done + '.png">' + '<p class="compNr">' + sortedChapterArray[chapterArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip' + starId + '">Du hast diese Kompetenz am ' + formattedDate + ' erreicht!</p></div>');
+
         }
 
         var flagUrl = 'images/chapters/chapter' + chapterDezNum + '/littleChapterFlag.png';
@@ -173,7 +191,7 @@ function selectCompetences(id) {
         restClient.withHeader("Authorization", newToken).read(illuUrl).then(function(illus) {
             $('#illuLeft').attr("src", illus[idNumber].illustrationLeft);
             $('#illuRight').attr("src", illus[idNumber].illustrationRight);
-        });  
+        });
     });
 }
 
@@ -202,7 +220,7 @@ function selectAllCompetences() {
                 var competenceNumber = chapterDezNum + "." + chapters[thisChapter].number;
                 chapters[thisChapter].compNr = competenceNumber;
                 chapters[thisChapter].chapterNr = chapterDezNum;
-                allChaptersArray.push(chapters[thisChapter]);                
+                allChaptersArray.push(chapters[thisChapter]);
             }
         }
 
@@ -215,9 +233,9 @@ function selectAllCompetences() {
         for (var allChaptersArrayPointer in sortedallChaptersArray) {
             starId++;
             var datum = sortedallChaptersArray[allChaptersArrayPointer].fromDate;
-            var formattedDate = (datum.charAt(6)+datum.charAt(7)+"."+datum.charAt(4)+datum.charAt(5)+"."+datum.charAt(0)+datum.charAt(1)+datum.charAt(2)+datum.charAt(3));
-            $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedallChaptersArray[allChaptersArrayPointer].studentText +'</p><img class="bubbleIcon" id="'+starId+'" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedallChaptersArray[allChaptersArrayPointer].chapterNr + '/competenceDone.png">' + '<p class="compNr">' + allChaptersArray[allChaptersArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip'+starId+'">Du hast diese Kompetenz am '+formattedDate+' erreicht!</p></div>');            
-            
+            var formattedDate = (datum.charAt(6) + datum.charAt(7) + "." + datum.charAt(4) + datum.charAt(5) + "." + datum.charAt(0) + datum.charAt(1) + datum.charAt(2) + datum.charAt(3));
+            $('#bubbleCanvas').append('<div class="bubble"><p>' + sortedallChaptersArray[allChaptersArrayPointer].studentText + '</p><img class="bubbleIcon" id="' + starId + '" onclick="showTooltip(this.id)" src="images/chapters/chapter' + sortedallChaptersArray[allChaptersArrayPointer].chapterNr + '/competenceDone.png">' + '<p class="compNr">' + allChaptersArray[allChaptersArrayPointer].compNr + '</p><p class="tooltipDate hidden" id="tooltip' + starId + '">Du hast diese Kompetenz am ' + formattedDate + ' erreicht!</p></div>');
+
         }
 
         $('#scrollUp').attr("src", "images/allCompetences/scrollUp.png");
@@ -276,5 +294,5 @@ function selectEduplans(id) {
 }
 
 function showTooltip(id) {
-    $('#tooltip'+id).toggleClass("hidden");
+    $('#tooltip' + id).toggleClass("hidden");
 }
